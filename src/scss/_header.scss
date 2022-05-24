@@ -1,0 +1,88 @@
+.header {
+    background-color: $midnightBlue;
+}
+
+.header-soccial {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 15px;
+    justify-content: space-between;
+    @include breakpoint (touch) {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+}
+}
+
+.header-list-holder {
+    padding-left: 3%;
+}
+
+.soccial-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    @include breakpoint (touch) {
+        justify-content: space-evenly;
+}
+}
+
+.icon-twitter,
+.icon-facebook,
+.icon-google-plus,
+.icon-pinterest {
+    font-size: 20px;
+    line-height: 22px;
+    color: $white;
+    padding: 5px 8px;
+}
+
+.rigths-holder {
+    padding-right: 3%;
+}
+
+.copyrights {
+    font-size: 20px;
+    line-height: 22px;
+    color: $white;
+    text-decoration: none;
+}
+
+.header-main {
+    background-color: $regalBlue;
+}
+
+.header-main-uper {
+    border-bottom: 1px solid grey;
+}
+
+.header-main-uper-holder, .header-main-bot-holder,
+.nav-list, .small-nav-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    padding: 20px;
+    min-height: 120px;
+}
+
+.header-main-uper-holder, .header-main-bot-holder {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0 28px;
+}
+
+.navbar {
+    flex: 1 1 50%;
+    max-width: 50%;
+}
+.nav-list-link {
+    font-size: 16px;
+    line-height: 18px;
+    color: $white;
+    text-decoration: none;
+    padding: 5px;
+}
