@@ -75,14 +75,56 @@
     padding: 0px 10px 0 28px;
 }
 
-.navbar {
-    flex: 1 1 50%;
-    max-width: 50%;
+.title-address, .title-phone {
+    font-size: 16px;
+    line-height: 18px;
+    color: $white;
 }
-.nav-list-link {
+
+.free-call, .adress-map {
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $white;
+
+}
+
+.header-main-bot-holder {
+    padding: 15px 0;
+}
+
+.navbar {
+    flex: 1 1 60%;
+    max-width: 60%;
+}
+
+.nav-list {
+    justify-content: space-between;
+    padding-left: 45px;
+}
+
+.nav-list-item {
+    padding-left: 10px;
+}
+.small-nav {
+    align-items: center;
+}
+
+.nav-list-link , .small-nav-link{
     font-size: 16px;
     line-height: 18px;
     color: $white;
     text-decoration: none;
     padding: 5px;
+}
+
+.icon-search, .icon-cart {
+    font-size: 20px;
+    line-height: 22px;
+    color: $white;
+    padding: 8px;
+}
+
+.small-nav-item:nth-of-type(1) {
+    align-items: flex-end;
 }
