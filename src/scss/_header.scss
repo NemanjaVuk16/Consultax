@@ -38,9 +38,12 @@
     line-height: 20px;
     color: $white;
     padding: 5px 12px;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
-.rigths-holder {
+.rights-holder {
     padding-right: 3%;
 }
 
@@ -54,6 +57,13 @@
     line-height: 16px;
     color: $botticelli;
     text-decoration: none;
+    &:hover {
+        opacity: 0.7;
+    }
+    @include breakpoint (touch) {
+        font-size: 10px;
+        line-height: 12px;
+    }
 }
 
 .header-main {
@@ -64,28 +74,49 @@
     border-bottom: 1px solid grey;
 }
 
-.header-main-uper-holder, .header-main-bot-holder,
-.nav-list, .small-nav-list {
-    display: flex;
-    flex-direction: row;
-    @include breakpoint (touch) {
-        flex-direction: column;
-    }
-}
-
-.logo {
-    padding: 20px;
-    min-height: 120px;
-}
-
 .header-main-uper-holder, .header-main-bot-holder {
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px 0 28px;
 }
 
+.header-main-uper-holder, .header-main-bot-holder{
+    display: flex;
+    flex-direction: row;
+    @include breakpoint (touch) {
+        flex-direction: column;
+        padding: 0px 5px 25px 15px;
+        .nav-list-link::after {
+            left: 110px;
+        }
+    }
+}
+
+.nav-list {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding-left: 45px;
+    @include breakpoint (touch) {
+        flex-direction: column;
+        padding-left: 0;
+        .nav-list-link::after {
+            left: 110px;
+        }
+    }
+}
+
+.logo {
+    padding: 20px;
+    min-height: 120px;
+    @include breakpoint (touch) {
+        min-height: 90px;
+    }
+}
+
 .adress-holder {
     text-align: right;
+    padding: 15px;
     padding-left: 30%;
     @include breakpoint (touch) {
         text-align: center;
@@ -104,6 +135,13 @@
     line-height: 18px;
     text-decoration: none;
     color: $botticelli;
+    &:hover {
+        opacity: 0.7;
+    }
+    @include breakpoint (touch) {
+        font-size: 12px;
+        line-height: 14px;
+    }
 }
 
 .free-call {
@@ -112,6 +150,13 @@
     text-decoration: none;
     font-weight: bold;
     color: $white;
+    &:hover {
+        opacity: 0.7;
+    }
+    @include breakpoint (touch) {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }
 
 .header-main-bot-holder {
@@ -123,28 +168,105 @@
     max-width: 60%;
 }
 
-.nav-list {
-    justify-content: space-between;
-    padding-left: 45px;
+.drop-down {
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: -10px;
+    margin: 20px 10px;
+    padding: 10px;
+    text-align: center;
+    min-width: 125px;
+    z-index: 1;
+    background-color: $regalBlue;
+    box-shadow: 0 4px 2px -2px $bermudaGray;
+    @include breakpoint (touch) {
+        top: -20px;
+        left: 115px;
+        min-width: 80px;
+        margin: 10px 5px;
+    }
+}
+.drop-down-item {
+    padding: 5px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 17px;
+    text-align: center;
+}
+.drop-down-link {
+    display: block;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 500;
+    text-align: left;
+    color: $bermudaGray;
+    text-align: center;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .nav-list-item {
-    padding-left: 10px;
+    padding-left: 20px;
+    position: relative;
+    @include breakpoint(touch) {
+        padding-bottom: 10px;
+        padding-left: 0;
+    }
 }
+
 .small-nav {
     align-items: center;
 }
 
 .small-nav-list {
     align-items: baseline;
+    display: flex;
+    flex-direction: row;
 }
 
-.nav-list-link , .small-nav-link{
+.small-nav-item {
+    padding-left: 15px;
+}
+
+.nav-list-link , .small-nav-link {
+    position: relative;
     font-size: 16px;
     line-height: 18px;
     color: $white;
     text-decoration: none;
     padding: 5px;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.nav-list-item {
+    &:hover {
+        .drop-down{
+            display: block;
+        }
+    }
+}
+
+.nav-list-link::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 105%;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $white;
+    border-right: 2px solid $white;
+    transform: rotate(135deg);
+    @include breakpoint (touch){
+        transform: rotate(42deg);
+    }
+}
+
+.nav-list-link-contacts::after {
+    display: none;
 }
 
 .icon-search, .icon-cart {
