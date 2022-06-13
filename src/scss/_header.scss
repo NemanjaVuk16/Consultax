@@ -207,6 +207,81 @@
     }
 }
 
+.navbar {
+    padding-top: 10px;
+    @include breakpoint(touch) {
+        display: none;
+    }
+}
+
+.navbar.open {
+    @include breakpoint (touch) {
+        display: flex;
+    }
+}
+
+.menu-btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    :hover {
+        opacity: 0.7;
+    }
+    @include breakpoint (touch) {
+        display: flex;
+    }
+}
+
+.menu-btn.open {
+    .menu-btn-burger {
+        transform: translateX(-20px);
+        background: transparent;
+        box-shadow: none;
+    }
+    .menu-btn-burger::before {
+        transform: rotate(45deg) translate(15px, -15px);
+    }
+    .menu-btn-burger::after {
+        transform: rotate(-45deg) translate(15px, 15px);
+    }
+}
+
+
+.menu-btn-burger {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px $regalBlue;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px $regalBlue;
+        transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before {
+    transform: translateY(-6px);
+}
+.menu-btn-burger::after {
+    transform: translateY(6px);
+}
+
+
 .nav-list-item {
     padding-left: 20px;
     position: relative;
@@ -218,6 +293,9 @@
 
 .small-nav {
     align-items: center;
+    @include breakpoint(touch) {
+        padding-top: 22px;
+    }
 }
 
 .small-nav-list {
